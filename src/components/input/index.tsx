@@ -12,7 +12,7 @@ export function Input() {
     
     if(input === "") return;
 
-    router.push(`/game/${input}`);
+    router.push(`/game/search/${input}`);
 
   }
 
