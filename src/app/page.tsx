@@ -63,7 +63,7 @@ export default async function Home() {
         <h2 className="text-lg font-bold mt-8 mb-5">
           Jogos para conhecer
         </h2>
-        <section className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <section className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3">
           {data.map( (item) => (
             <GameCard key={item.id} data={item} />
           ))}
