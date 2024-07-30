@@ -4,10 +4,13 @@ import { GameProps } from "@/utils/types/game";
 import { GameCard } from '@/components/GameCard';
 
 async function getData(title: string) {
-  // console.log("PARÂMETRO: " + title);
 
   try {
-    const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&title=${title}`);
+    // para retirar o encode criamos decodeTitle:
+    const decodeTitle = decodeURI(title);
+    // com isso é retornado para gente sem encode como %20 que representa espaço
+    // const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&title=${title}`);
+    const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&title=${decodeTitle}`);
     return res.json();
 
   } catch (error) {
