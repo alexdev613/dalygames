@@ -3,6 +3,8 @@ import { GameProps } from "@/utils/types/game";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRightSquare } from "react-icons/bs";
+import { Input } from "../components/input"
+
 async function getDalyGame() {
   try {
     const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game_day`, {next: { revalidate: 320}})
@@ -17,8 +19,6 @@ async function getDalyGame() {
 export default async function Home() {
 
   const dalyGame: GameProps = await getDalyGame();
-
-  console.log(dalyGame);
 
   return (
     <main className="w-full">
@@ -45,6 +45,7 @@ export default async function Home() {
             </div>
           </section>
         </Link>
+        <Input />
       </Container>
     </main>
   );
