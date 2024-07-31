@@ -3,6 +3,12 @@ import Image from 'next/image';
 import userImg from '../../../public/user.png';
 import { FaShareAlt } from 'react-icons/fa';
 import { FavoriteCard } from '@/app/profile/components/favorites';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Meu perfil - Daily games, sua plataforma de jogos!",
+  description: "Perfil Alex Nascimento | Daly Games sua plataforma de jogos!",
+}
 
 export default function Profile() {
   return (
